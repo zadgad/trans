@@ -108,16 +108,16 @@
             </div>
         </div>
         {{-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> --}}
-        {{-- <script>window.jQuery || document.write('<script src="{{asset('proyect') }}./src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script> --}}
+        <script>window.jQuery || document.write('<script src="{{asset('proyect') }}./src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
         <script src="{{ asset('proyect') }}./plugins/popper.js/dist/umd/popper.min.js"></script>
         <script src="{{ asset('proyect') }}./plugins/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
+        {{-- <script src="{{ asset('proyect') }}./plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script> --}}
         <script src="{{ asset('proyect') }}./plugins/screenfull/dist/screenfull.js"></script>
         <script src="{{ asset('proyect') }}./src/js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="{{ asset('proyect') }}./plugins/moment/moment.js"></script>
         @stack('scripts')
         <script src="{{ asset('proyect') }}./plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>
-        <script src="{{ asset('proyect') }}./dist/js/theme.min.js"></script>
+        {{-- <script src="{{ asset('proyect') }}./dist/js/theme.min.js"></script> --}}
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         {{-- <script>
