@@ -98,7 +98,7 @@
                                               @csrf
                                               @method('delete')
 
-                                              <a href="{{route('editarSen',$in->id_sensor)}}" class="ik ik-edit f-16 mr-15 text-green"></a>            
+                                              <a href="{{route('editarSen',$in->id_sensor)}}" class="ik ik-edit f-16 mr-15 text-green"></a>
                                               <a href=""><i class="ik ik-trash-2 f-16 text-red"></i></a>
                                           </form>
 
@@ -134,3 +134,15 @@
     </div>
   </div>
  @endsection
+ @push('links')
+ @push('links')
+ <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="{{asset('proyect')}}./plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+
+ @endpush
+ @push('scripts')
+ <script src="{{ asset('proyect') }}./plugins/datatables.net/js/jquery.dataTables.min.js"></script>
+         <script src="{{ asset('proyect') }}./plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+         <script src="{{ asset('proyect') }}./js/datatables.js"></script>
+
+ @endpush

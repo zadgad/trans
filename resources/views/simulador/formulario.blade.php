@@ -108,7 +108,7 @@ body {
                             <div class="card-body">
                                 {{-- {{dd(route('llenarDatos',$idus[0]))}} --}}
                                 {{-- action="{{ route('llenarDatos',$idus[0]) }}" --}}
-                                <form id="formdata" method="post"  autocomplete="off" class="form-horizontal style-form">
+                                <form id="formdata" method="POST"  action="{{ route('llenarDatos',$idus[0]) }}" autocomplete="off" class="form-horizontal style-form">
 
                               @csrf
                                 @method('post')
@@ -170,7 +170,7 @@ body {
                                   </div>
 
                             <div class="card-footer ml-auto mr-auto">
-                                <button type="submit"  onclick="cargar()" class="btn btn-primary">{{ __('Generar Datos') }}</button>
+                                <button type="submit"  class="btn btn-primary">{{ __('Generar Datos') }}</button>
                             </div>
                             <input type="hidden" name="csr-token" value="{{csrf_token()}}">
                         </form>
@@ -208,29 +208,29 @@ body {
 @endsection
 @section('scripts')
     <script>
-        $(".btn-primary").click(function(e)){
-            $,ajaxSetup({
-                headers:{
-                    'X-CSRF-TOKEN':$("#csrf-token").val();
-                }
-            });
-            e.preventDefault();
-            console.log("hola");
-            var formData={
-                datos:$('#formdata')
-            }
-            $.ajax({
-            type: "POST",
-            url:$('#route_action'),
-            data: formData,
-            dataType:'json',
-            success: function(data) {
-                console.log("hola");
-            },error:function(data){
+        // $(".btn-primary").click(function(e)){
+        //     $,ajaxSetup({
+        //         headers:{
+        //             'X-CSRF-TOKEN':$("#csrf-token").val();
+        //         }
+        //     });
+        //     e.preventDefault();
+        //     console.log("hola");
+        //     var formData={
+        //         datos:$('#formdata')
+        //     }
+        //     $.ajax({
+        //     type: "POST",
+        //     url:$('#route_action'),
+        //     data: formData,
+        //     dataType:'json',
+        //     success: function(data) {
+        //         console.log("hola");
+        //     },error:function(data){
 
-            }
-    });
-        }
+        //     }
+        //  });
+        // }
 
     </script>
 @endsection

@@ -92,9 +92,12 @@ Route::post('/inserte_infor','UbicacionController@create')->name('insertDates');
 Route::get('/edit_ubication/{id}','UbicacionController@edit')->name('editUbication');
 Route::put('/insert_edit/{id}','UbicacionController@store')->name('insertEdit');
 Route::get('/elinar_ubic/{id}','UbicacionController@destroy')->name('destroy');
-
+/************/
+/* simulador*/
+/************/
 Route::get('/simulador/formulario','Simulador@formulario')->name('formularioSim');
 Route::post('/simulador/insertDate/{id}','Simulador@insert')->name('llenarDatos');
+//Route::post('/simulador/insertDate/{id}','Simulador@insertarDatos')->name('llenarDatos');
 Route::get('/simulador/tablegister','Simulador@showFor')->name('registerSimulador');
 Route::get('/simulador/graficDate','Simulador@graficD')->name('graficosReg');
 Route::get('/simulador/graficDate','Simulador@tablasim')->name('tablasim');

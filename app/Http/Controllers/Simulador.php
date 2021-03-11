@@ -18,6 +18,15 @@ use DateTime;
 
 class Simulador extends Controller
 {
+    private $tipos_simulacion=['Autopista','Calle','Carretera','Avenida'];
+    private $tipo_vehiculo=['Liviano','Mediano','Pesado'];
+    private $porcentaje = 0;
+    private $total_vehiculo=[];
+    private $view_data=[];
+    public function __construct()
+    {
+
+    }
     public function showFor(){
         if(session()->get('id') ?? ''){
             $maxs=Rol::max('id_rol');
@@ -41,14 +50,55 @@ class Simulador extends Controller
                 $idus=session()->get('id');
                 return view('simulador.formulario',compact('idus'));
             }else
-            return redirect()->route('login')
-            ->with('info');
+            return redirect()->route('login')->with('info');
 
-        }else return redirect()->route('login')
-        ->with('info');
+        }else return redirect()->route('login')->with('info');
 
     }
-    public function insert(Request $request,$idus)
+    public function insert(Request $request){
+
+        $this->validate($request,[
+                'numiter' =>'required|integer',
+                'clasi'=>'required|string|max:255',
+                'tipo'=>'required|string|max:255',
+                'from'=>'required|date',
+                'to'=>'required|date']
+            );
+        $this->borrarsimulador($request->id);
+        $numiter=$request->input('numiter');
+        $clasi=$request->input('clasi');
+        $tipo=$request->input('tipo');
+        $from =date_create( $request->input('from'));
+        $to=date_create($request->input('to'));
+        $aux1=$from->diff($to);
+        $dias=$aux1->days;
+        if(session()->get('id') ?? ''){
+            $maxs=Rol::max('id_rol');
+            if(session()->get('user_rol')->first()<=$maxs){
+                $carril=$this->numcarril($numiter);
+                    $generador=$this->generador($numiter, $dias);
+                    foreach ($generador as $value) {
+                        $this->porcentaje  = $this->porcentaje + count($value);
+                        array_push($this->total_vehiculo,count($value));
+                    }
+                    if(in_array($request->input('clasi'),$this->tipos_simulacion))
+                    {
+                        $this->view_data['numero_itereracion']=$numiter;
+                        $this->view_data['clasificacion']=$clasi;
+                        $this->view_data['tipo']=$tipo;
+                        $this->view_data['desde']=$from;
+                        $this->view_data['destino']=$to;
+                        $this->view_data['dias']=$dias;
+                        $this->view_data['generador']=$generador;
+                        $this->view_data['carril']=$carril;
+                        $this->view_data['tipo_vehiculo']=$this->tipo_vehiculo;
+                       // $this->simAuto($numiter,$clasi,$tipo,$from,$to,$dias, $generador,$carril,$this->tipo_vehiculo);
+                       $this->simAuto($this->view_data);
+                    }
+            }
+        }
+    }
+    public function insert3(Request $request,$idus)
     {   $id=$idus;
         $this->borrarsimulador($id);
         $this->validate(
@@ -396,18 +446,19 @@ class Simulador extends Controller
                                }
                                return $this->tables();
     }
-    public function simAuto($numiter,$clasi,$tipo,$from,$to,$dias, $gener,$carr,$tipv)
+    public function simAuto($request)
     {
-
-        $numer=$numiter;
-        $clas=$clasi;
-        $tip=$tipo;
-        $from=$from;
-        $to=$to;
-        $cantdia=$dias;
-        $congruencial=$gener;
-        $carril=$carr;
-        $tipve=$tipv;
+        ///dd($request);
+        $numer=$request['numero_itereracion'];
+        $clas=$request['clasificacion'];
+        $tip=$request['tipo'];
+        $from=$request['desde'];
+        $to=$request['destino'];
+        $cantdia=$request['dias'];
+        $congruencial=$request['generador'];
+        $carril=$request['carril'];
+        $tipve=$request['tipo_vehiculo'];
+        return view('simulador.generador',$request);
         /*  $incre=date_add($from, date_interval_create_from_date_string('1 days'));
                $incre=date_format($incre,'Y-m-d');
                 dd($incre); */
@@ -538,13 +589,6 @@ class Simulador extends Controller
 
         }
         return $arrayNumP;
-    /*     $tam=count($arrayNumP);
-        for($p=0;$p<$tam;$p++){
-
-            $cade[$p]=count($arrayNumP[$p]);
-        }
-       // dd($cade);
-        return $cade; */
     }
     public function generadoras($num){
         $numer=$num;

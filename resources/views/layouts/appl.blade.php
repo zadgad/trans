@@ -12,47 +12,15 @@
         <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('plantillas/img/syste.jpg') }}">
     <link rel="icon" type="image/png" href="{{ asset('plantillas/img/system.jpg') }}">
 
-    <link href="{{ asset('proyect') }}https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet">
+     {{-- <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800" rel="stylesheet"> --}}
 
     <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/icon-kit/dist/css/iconkit.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/ionicons/dist/css/ionicons.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/perfect-scrollbar/css/perfect-scrollbar.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/weather-icons/css/weather-icons.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/c3/c3.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/datedropper/datedropper.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/summernote/dist/summernote-bs4.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/summernote/dist/summernote-bs4.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/mohithg-switchery/dist/switchery.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/weather-icons/css/weather-icons.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/chartist/dist/chartist.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jvectormap/jquery-jvectormap.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/fullcalendar/dist/fullcalendar.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-bar-rating/dist/themes/bars-1to10.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-bar-rating/dist/themes/bars-horizontal.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-bar-rating/dist/themes/bars-movie.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-bar-rating/dist/themes/bars-pill.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-bar-rating/dist/themes/bars-reversed.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-bar-rating/dist/themes/bars-square.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-bar-rating/dist/themes/css-stars.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-bar-rating/dist/themes/fontawesome-stars-o.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/bootstrap-slider/dist/css/bootstrap-slider.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./node_modules/@fortawesome/fontawesome-free/css/all.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./node_modules/ionicons/dist/css/ionicons.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./node_modules/icon-kit/dist/css/iconkit.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./node_modules/perfect-scrollbar/css/perfect-scrollbar.css">
-
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/jquery-minicolors/jquery.minicolors.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/owl.carousel/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/owl.carousel/dist/assets/owl.theme.default.min.css">
+        <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/ionicons/dist/css/ionicons.min.css">
+        <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/icon-kit/dist/css/iconkit.min.css">
+        <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/perfect-scrollbar/css/perfect-scrollbar.css">
+        <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css">
+        @stack('links')
     <link rel="stylesheet" href="{{ asset('proyect') }}./dist/css/theme.min.css">
     <script src="{{ asset('proyect') }}./src/js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
@@ -139,66 +107,17 @@
                 </div>
             </div>
         </div>
-        <script src="{{ asset('proyect') }}https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script>window.jQuery || document.write('<script src="{{ asset('proyect') }}./src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+        {{-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> --}}
+        <script>window.jQuery || document.write('<script src="{{asset('proyect') }}./src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
         <script src="{{ asset('proyect') }}./plugins/popper.js/dist/umd/popper.min.js"></script>
         <script src="{{ asset('proyect') }}./plugins/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="{{ asset('proyect') }}./plugins/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
         <script src="{{ asset('proyect') }}./plugins/screenfull/dist/screenfull.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/datatables.net/js/jquery.dataTables.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/jvectormap/jquery-jvectormap.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="{{ asset('proyect') }}./src/js/vendor/modernizr-2.8.3.min.js"></script>
         <script src="{{ asset('proyect') }}./plugins/moment/moment.js"></script>
+        @stack('scripts')
         <script src="{{ asset('proyect') }}./plugins/tempusdominus-bootstrap-4/build/js/tempusdominus-bootstrap-4.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/d3/dist/d3.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/jquery.repeater/jquery.repeater.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/mohithg-switchery/dist/switchery.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/jquery-minicolors/jquery.minicolors.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/datedropper/datedropper.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/amcharts/amcharts.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/nestable/jquery.nestable.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/amcharts3/amcharts/amcharts.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/amcharts3/amcharts/gauge.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/amcharts3/amcharts/serial.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/amcharts3/amcharts/themes/light.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/amcharts3/amcharts/pie.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/ammap3/ammap/ammap.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/ammap3/ammap/maps/js/usaLow.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/chartist/dist/chartist.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/flot-charts/jquery.flot.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/flot-charts/jquery.flot.categories.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/flot-charts/curvedLines.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/flot-charts/jquery.flot.tooltip.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/jquery-kn 0ob/dist/jquery.knob.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/jvectormap/jquery-jvectormap.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/jvectormap/tests/assets/jquery-jvectormap-world-mill-en.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/fullcalendar/dist/fullcalendar.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/jquery-knob/dist/jquery.knob.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/bootstrap-slider/dist/bootstrap-slider.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/jquery-toast-plugin/dist/jquery.toast.min.js"></script>
-        <script src="{{ asset('proyect') }}./node_modules/popper.js/dist/umd/popper.min.js"></script>
-        <script src="{{ asset('proyect') }}./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="{{ asset('proyect') }}./node_modules/perfect-scrollbar/dist/perfect-scrollbar.min.js"></script>
-        <script src="{{ asset('proyect') }}./node_modules/screenfull/dist/screenfull.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/summernote/dist/summernote-bs4.min.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/c3/c3.min.js"></script>
-        <script src="{{ asset('proyect') }}./js/tables.js"></script>
-        <script src="{{ asset('proyect') }}./js/widgets.js"></script>
-        <script src="{{ asset('proyect') }}./js/charts.js"></script>
-        <script src="{{ asset('proyect') }}./js/chart-chartist.js"></script>
-        <script src="{{ asset('proyect') }}./js/rating.js"></script>
-        <script src="{{ asset('proyect') }}./js/range-slider.js"></script>
-        <script src="{{ asset('proyect') }}./js/alerts.js"></script>
         <script src="{{ asset('proyect') }}./dist/js/theme.min.js"></script>
-        <script src="{{ asset('proyect') }}./js/datatables.js"></script>
-        <script src="{{ asset('proyect') }}./js/form-components.js"></script>
-        <script src="{{ asset('proyect') }}./plugins/owl.carousel/dist/owl.carousel.min.js"></script>
-        <script src="{{ asset('proyect') }}./js/carousel.js"></script>
-        <script language="JavaScript" type="text/javascript" src="{{ asset('proyect')}}./js/select/ciud.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -292,6 +211,5 @@
 
 
            </script>
-        @yield('scripts')
     </body>
 </html>

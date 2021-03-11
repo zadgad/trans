@@ -31,22 +31,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12">
-            <div class="card table-card">
+        <div class="card">
+            <div class="card-header">
                 <div class="card-header">
                     <h3>Lista de Vias</h3>
-                    <div class="col-md-8 text-right">
-                        <a href="{{route('añadir_via')}}" class="btn btn-sm btn-primary">{{ __('Añadir Via') }}</a>
-                      </div>
-                    <div class="card-header-right">
-                        <ul class="list-unstyled card-option">
-                            <li><i class="ik ik-chevron-left action-toggle"></i></li>
-                            <li><i class="ik ik-minus minimize-card"></i></li>
-                            <li><i class="ik ik-x close-card"></i></li>
-                        </ul>
                     </div>
+                    <a href="{{route('añadir_via')}}" class="btn btn-sm btn-primary">{{ __('Añadir Via') }}</a>
+
                 </div>
-                <div class="card-block">
+                <div class="card-body">
                     <div class="table-responsive">
                         <table class="table table-hover mb-0">
                             <thead class=" text-primary">
@@ -78,7 +71,7 @@
                                    {{ __('Accion') }}
                                  </th>
                                </thead>
-       
+
                                        <tbody>
                                          @foreach($vias as $via)
                                          <tr>
@@ -106,10 +99,10 @@
                                            <td class="text-center">
                                              {{ $via->clacificacion }}
                                            </td>
-       
+
                                            <td class="td-actions text-right">
                                              {{-- @if ($user->id != auth()->id())
-       
+
                                              @else
                                                <a rel="tooltip" class="btn btn-success btn-link" href="{{ route('profile.edit') }}" data-original-title="" title="">
                                                  <i class="material-icons">editar</i>
@@ -119,21 +112,50 @@
                                              <form action={{-- "{{ route('user.destroy', $user) }}" --}} method="post">
                                                  @csrf
                                                  @method('delete')
-       
+
                                                  <form action={{-- "{{ route('user.destroy', $user) }}" --}}  method="post">
                                                    @csrf
                                                    @method('delete')
-       
+
                                                    <a  href="{{route('editVia',$id=$via->id_via)}}"><i class="ik ik-edit f-16 mr-15 text-green"></i></a>
                                                      <a href=""><i class="ik ik-trash-2 f-16 text-red"></i></a>
                                                </form>
-       
+
                                              </form>
                                            </td>
                                          </tr>
                                        @endforeach
                                            </tbody>
-                        </table>
+                                           <tfoot>
+                                            <th class="text-center">
+                                                {{ __('#')}}
+                                              </th>
+                                               <th class="text-center">
+                                                   {{ __('Nombre Via') }}
+                                               </th>
+                                               <th class="text-center">
+                                                 {{ __('Ciudad') }}
+                                               </th>
+                                               <th class="text-center">
+                                                 {{ __('Departamento') }}
+                                               </th>
+                                               <th class="text-center">
+                                                 {{ __('Dimencion') }}
+                                               </th>
+                                               <th class="text-center">
+                                                 {{ __('#Carril') }}
+                                               </th>
+                                               <th class="text-center">
+                                                 {{ __('Tipo') }}
+                                               </th>
+                                               <th class="text-center">
+                                                 {{ __('Clasificacion') }}
+                                               </th>
+                                               <th class="text-right">
+                                                 {{ __('Accion') }}
+                                               </th>
+                                           </tfoot>
+                                        </table>
                     </div>
                 </div>
             </div>
@@ -141,3 +163,15 @@
     </div>
   </div>
  @endsection
+
+ @push('links')
+ <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+        <link rel="stylesheet" href="{{asset('proyect')}}./plugins/datatables.net-bs4/css/dataTables.bootstrap4.min.css">
+
+ @endpush
+ @push('scripts')
+         <script src="{{ asset('proyect') }}./plugins/datatables.net/js/jquery.dataTables.min.js"></script>
+         <script src="{{ asset('proyect') }}./plugins/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+         <script src="{{ asset('proyect') }}./js/datatables.js"></script>
+
+ @endpush

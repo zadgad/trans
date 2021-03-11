@@ -149,3 +149,11 @@
   </div>
 
  @endsection
+@push('links')
+<link rel="stylesheet" href="{{ asset('proyect') }}./plugins/owl.carousel/dist/assets/owl.carousel.min.css">
+        <link rel="stylesheet" href="{{ asset('proyect') }}./plugins/owl.carousel/dist/assets/owl.theme.default.min.css">
+@endpush
+@push('scripts')
+<script src="{{ asset('proyect') }}./plugins/owl.carousel/dist/owl.carousel.min.js"></script>
+        <script src="{{ asset('proyect') }}./js/carousel.js"></script>
+@endpush
